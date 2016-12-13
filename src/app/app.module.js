@@ -1,8 +1,7 @@
 (function () {
+
 	'use strict';
 
-	angular.module('app', [
-		'app.dashboard', 
-		'app.product']);
-
+	angular.module('app', ['app.dashboard', 'app.product']);
+	
 })();

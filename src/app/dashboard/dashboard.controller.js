@@ -9,7 +9,7 @@
 
 		var vm = this;
 
-		vm.addToCart = addToCart;	
+		vm.addToCart = addToCart;
 		vm.indexOf = indexOf;
 		vm.order = {};
 		vm.order.itens = [];

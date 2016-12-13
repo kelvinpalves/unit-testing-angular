@@ -4,13 +4,16 @@ describe('Dashboard', function () {
 
 	var $controller;
 
-	var product01 = {
-  		name: 'Item test'
-  	};
-
-  	var product02 = {
-  		name: 'Item test 02'
-  	};
+	var products = [
+		{name: 'Apple'},
+		{name: 'Beans'},
+		{name: 'Coffee'},
+		{name: 'Meat'},
+		{name: 'Milk'},
+		{name: 'Potato'},
+		{name: 'Rice'},
+		{name: 'Soda'},
+		{name: 'Turkey'}];
 
 	beforeEach(inject(function (_$controller_) {
 		$controller = _$controller_;
@@ -22,12 +25,12 @@ describe('Dashboard', function () {
 			var $scope = {};
       		var controller = $controller('Dashboard', { $scope: $scope });
 
-	      	controller.addToCart(product01);
+	      	controller.addToCart(products[0]);
 	      	expect(controller.order.total).toBe(1);
 
-	      	controller.addToCart(product01);
-	      	controller.addToCart(product02);
-	      	controller.addToCart(product01);
+	      	controller.addToCart(products[0]);
+	      	controller.addToCart(products[1]);
+	      	controller.addToCart(products[2]);
 	      	expect(controller.order.total).toBe(4);
 		});
 
@@ -36,17 +39,20 @@ describe('Dashboard', function () {
 
 	      	var controller = $controller('Dashboard', { $scope: $scope });
 
-	      	controller.addToCart(product01);
-	      	controller.addToCart(product01);
+	      	controller.addToCart(products[0]);
+	      	controller.addToCart(products[0]);
 
 	      	expect(controller.order.itens.length).toBe(1);
 
-	      	controller.addToCart(product02);
-	      	controller.addToCart(product02);
-	      	controller.addToCart(product02);
-	      	controller.addToCart(product02);
+	      	controller.addToCart(products[1]);
+	      	controller.addToCart(products[1]);
+	      	controller.addToCart(products[2]);
+	      	controller.addToCart(products[3]);
+	      	controller.addToCart(products[3]);
+	      	controller.addToCart(products[3]);
+	      	controller.addToCart(products[4]);
 
-	      	expect(controller.order.itens.length).toBe(2);
+	      	expect(controller.order.itens.length).toBe(5);
 		});
 
 		it ('Sum to quantity of item', function () {
@@ -54,17 +60,17 @@ describe('Dashboard', function () {
 
 	      	var controller = $controller('Dashboard', { $scope: $scope });
 
-	      	controller.addToCart(product01);
-	      	controller.addToCart(product01);
+	      	controller.addToCart(products[0]);
+	      	controller.addToCart(products[0]);
 	
-			expect(controller.order.itens[controller.indexOf(product01)].quantity).toBe(2);
+			expect(controller.order.itens[controller.indexOf(products[0])].quantity).toBe(2);
 
-	      	controller.addToCart(product02);
-	      	controller.addToCart(product02);
-	      	controller.addToCart(product02);
-	      	controller.addToCart(product02);
+	      	controller.addToCart(products[1]);
+	      	controller.addToCart(products[1]);
+	      	controller.addToCart(products[1]);
+	      	controller.addToCart(products[1]);
 
-	      	expect(controller.order.itens[controller.indexOf(product02)].quantity).toBe(4);
+	      	expect(controller.order.itens[controller.indexOf(products[1])].quantity).toBe(4);
 		});
 
 	});
