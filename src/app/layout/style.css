@@ -1,3 +1,4 @@
 .product { margin-left: 30px; margin-right: 30px; margin-top: 5px;}
 .total { border-top: 3px dashed black; font-weight: bold;}
 .cart { border: 1px solid black;}
+.btn-icon { cursor: pointer; }
