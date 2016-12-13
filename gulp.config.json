@@ -1,0 +1,11 @@
+{
+	"js": [
+		"src/app/app.module.js",
+		"src/app/product/product.module.js",
+		"src/app/product/product.factory.js",
+		"src/app/dashboard/dashboard.module.js",
+		"src/app/dashboard/dashboard.controller.js"
+	],
+	"css": "./src/app/**/*.css",
+	"build": "./build"
+}

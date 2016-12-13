@@ -5,8 +5,8 @@
 
 	Dashboard.$inject = ['product.dataservice'];
 
+	/* @ngInject */
 	function Dashboard(productDataservice) {
-
 		var vm = this;
 
 		vm.addToCart = addToCart;

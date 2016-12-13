@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" ng-strict-di>
 <head>
 	<title>Unit Testing AngularJS with Jasmine</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="src/app/layout/style.css">
+	<link rel="stylesheet" type="text/css" href="build/all.min.css">
 </head>
 <body>
 	<div ng-controller="Dashboard as vm" class="container">
@@ -59,11 +59,6 @@
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 	<!-- application -->
-	<script type="text/javascript" src="src/app/app.module.js"></script>
-	<script type="text/javascript" src="src/app/product/product.module.js"></script>
-	<script type="text/javascript" src="src/app/product/product.factory.js"></script>
-	<script type="text/javascript" src="src/app/dashboard/dashboard.module.js"></script>
-	<script type="text/javascript" src="src/app/dashboard/dashboard.controller.js"></script>
-
+	<script type="text/javascript" src="build/all.min.js"></script>
 </body>
 </html>
